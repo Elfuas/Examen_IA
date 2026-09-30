@@ -1,0 +1,202 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>Cuaderno de IA y lógica | Semanas 1 a 8</title>
+  <meta name="description" content="Cuaderno personal con lo aprendido en IA y lógica, semana por semana.">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@500;700;800&family=Literata:ital,wght@0,400;0,600;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
+</head>
+<body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs><marker id="ar" viewBox="0 0 10 10" refX="9" refY="5" markerWidth="7" markerHeight="7" orient="auto"><path d="M0 0L10 5L0 10z" fill="#5b6b64"/></marker></defs></svg>
+
+<aside class="side">
+  <p class="brand">Cuaderno de IA y lógica</p>
+  <nav aria-label="Semanas"><a href="#s1" class="u1"><b>1</b> Qué es la IA</a><a href="#s2" class="u1"><b>2</b> Historia</a><a href="#s3" class="u1"><b>3</b> Áreas y usos</a><a href="#s4" class="u2"><b>4</b> Lógica proposicional</a><a href="#s5" class="u2"><b>5</b> Conectivos y tablas</a><a href="#s6" class="u2"><b>6</b> Predicados</a><a href="#s7" class="u2"><b>7</b> fbf y unificación</a><a href="#s8" class="u2"><b>8</b> Reglas de producción</a><a href="#cierre" class="end">Lo que me llevo</a></nav>
+</aside>
+
+<div class="page">
+  <header class="intro">
+    <p class="kicker">28 de julio al 21 de septiembre</p>
+    <h1>Ocho semanas, dos unidades y muchas dudas resueltas</h1>
+    <p>Este cuaderno junta lo que fui entendiendo en clase, semana por semana. No es una copia de los apuntes: escribí cada tema como se lo explicaría a un compañero, y dejé al final de cada uno una pregunta que me quedó dando vueltas.</p>
+    <p class="legend"><span class="dot d1"></span>Unidad I: Inteligencia Artificial <span class="dot d2"></span>Unidad II: Lógica y representación del conocimiento</p>
+  </header>
+  <main>
+  <section id="s1" class="wk u1">
+    <header class="wk-head"><span class="num">1</span><div><p class="dates">28 jul - 3 ago</p><h2>Qué es la IA y cómo se define</h2></div></header>
+    <div class="cols">
+      <div class="txt"><p>Cuando escuché "inteligencia artificial" por primera vez, me imaginé robots de película. En clase vimos que la idea es más sencilla y a la vez más amplia: hacer que un programa resuelva problemas que normalmente pedirían inteligencia humana.</p><p>El problema es que nadie se pone de acuerdo en qué es "inteligencia", así que existen varias definiciones. Las que estudiamos se agrupan según dos preguntas: si el sistema piensa o actúa, y si lo hace como una persona o de forma racional.</p></div>
+      <aside class="gloss"><h3>En pocas palabras</h3><dl><dt>Agente</dt><dd>algo que percibe su entorno y actúa sobre él.</dd><dt>Racional</dt><dd>que elige lo que más le conviene para cumplir su objetivo.</dd><dt>Test de Turing</dt><dd>prueba de 1950: si no distingues si hablas con una máquina, esta pasa.</dd></dl></aside>
+    </div>
+    <figure class="fig">
+          <svg viewBox="0 0 600 180" role="img" aria-label="Cuatro enfoques para definir la IA">
+            <rect class="b" x="5" y="5" width="285" height="75" rx="6"/><text class="t" x="147" y="37">Piensa como un humano</text><text class="s" x="147" y="60">intenta copiar cómo funciona la mente</text>
+            <rect class="b" x="310" y="5" width="285" height="75" rx="6"/><text class="t" x="452" y="37">Actúa como un humano</text><text class="s" x="452" y="60">se comporta igual que una persona</text>
+            <rect class="b2" x="5" y="95" width="285" height="75" rx="6"/><text class="t" x="147" y="127">Piensa racionalmente</text><text class="s" x="147" y="150">sigue las leyes del razonamiento lógico</text>
+            <rect class="b2" x="310" y="95" width="285" height="75" rx="6"/><text class="t" x="452" y="127">Actúa racionalmente</text><text class="s" x="452" y="150">busca siempre el mejor resultado posible</text>
+          </svg>
+          <figcaption>Los cuatro enfoques para definir la IA. Arriba lo humano, abajo lo racional.</figcaption>
+        </figure>
+    <div class="ej"><span class="tag">Ejemplo</span><p>Un termostato que aprende a qué hora llegas a casa y sube la temperatura un rato antes. Percibe (la hora, la temperatura), decide y actúa, así que se comporta como un agente sencillo.</p></div>
+    <p class="think"><strong>Para pensar:</strong> ¿Un corrector ortográfico es inteligencia artificial? A mí me costó decidirlo, y creo que depende de la definición que uses.</p>
+  </section>
+  <section id="s2" class="wk u1">
+    <header class="wk-head"><span class="num">2</span><div><p class="dates">4 - 10 ago</p><h2>Cómo llegó la IA hasta hoy</h2></div></header>
+    <div class="cols">
+      <div class="txt"><p>La historia va por olas. En 1950 Turing lanzó la pregunta de si las máquinas pueden pensar, y en 1956 se bautizó el campo en Dartmouth. Después vinieron años de optimismo con los sistemas expertos, que guardaban el conocimiento de un especialista en forma de reglas.</p><p>Esos sistemas funcionaban bien en casos cerrados y fallaban apenas algo salía de lo previsto. Vino la desilusión, se recortó el dinero y llegaron los "inviernos de la IA". El nuevo enfoque cambió la idea de fondo: en vez de escribir todo a mano, dejar que el sistema aprenda de datos.</p></div>
+      <aside class="gloss"><h3>En pocas palabras</h3><dl><dt>Sistema experto</dt><dd>programa con reglas que imita a un especialista.</dd><dt>Invierno de la IA</dt><dd>época en que se perdió la confianza y el financiamiento.</dd><dt>Aprendizaje automático</dt><dd>aprender patrones a partir de ejemplos.</dd></dl></aside>
+    </div>
+    <figure class="fig">
+          <svg viewBox="0 0 660 160" role="img" aria-label="Línea de tiempo de la IA">
+            <line class="ln" x1="20" y1="80" x2="640" y2="80"/>
+            <g class="dots"><circle cx="60" cy="80" r="6"/><circle cx="168" cy="80" r="6"/><circle cx="276" cy="80" r="6"/><circle cx="384" cy="80" r="6"/><circle cx="492" cy="80" r="6"/><circle cx="600" cy="80" r="6"/></g>
+            <text class="t" x="60" y="60">1950</text><text class="s" x="60" y="105">Test de</text><text class="s" x="60" y="122">Turing</text>
+            <text class="t" x="168" y="60">1956</text><text class="s" x="168" y="105">Conferencia de</text><text class="s" x="168" y="122">Dartmouth</text>
+            <text class="t" x="276" y="60">1980</text><text class="s" x="276" y="105">Sistemas</text><text class="s" x="276" y="122">expertos</text>
+            <text class="t" x="384" y="60">1997</text><text class="s" x="384" y="105">Deep Blue le gana</text><text class="s" x="384" y="122">a Kaspárov</text>
+            <text class="t" x="492" y="60">2012</text><text class="s" x="492" y="105">Aprendizaje</text><text class="s" x="492" y="122">profundo</text>
+            <text class="t" x="600" y="60">2022</text><text class="s" x="600" y="105">IA</text><text class="s" x="600" y="122">generativa</text>
+          </svg>
+          <figcaption>Algunos hitos que ayudan a ubicar cada época.</figcaption>
+        </figure>
+    <div class="ej"><span class="tag">Ejemplo</span><p>En 1997 la computadora Deep Blue le ganó una partida de ajedrez al campeón mundial Kaspárov, pero lo hizo calculando muchísimas jugadas. Hoy los modelos aprenden de millones de ejemplos en lugar de que alguien les escriba cada regla.</p></div>
+    <p class="think"><strong>Para pensar:</strong> Si la IA ya tuvo épocas de mucha promesa y poco resultado, ¿cómo sé si la emoción actual es diferente?</p>
+  </section>
+  <section id="s3" class="wk u1">
+    <header class="wk-head"><span class="num">3</span><div><p class="dates">11 - 17 ago</p><h2>Áreas, aplicaciones e importancia</h2></div></header>
+    <div class="cols">
+      <div class="txt"><p>Lo que más me sorprendió es cuánta IA hay en mi día sin que me dé cuenta: el traductor, las recomendaciones de videos, el desbloqueo del celular con la cara o el mapa que calcula el tráfico. Cada uno viene de un área distinta: aprendizaje automático, visión por computadora, lenguaje natural o robótica.</p><p>Su importancia está en que ahorra tiempo, encuentra patrones que a una persona se le escaparían y llega a campos como la salud o la educación. Pero también trae dudas serias: puede repetir sesgos de los datos con que se entrenó, invade la privacidad si no se controla y cambia el tipo de empleos que existen.</p></div>
+      <aside class="gloss"><h3>En pocas palabras</h3><dl><dt>Visión por computadora</dt><dd>que la máquina interprete imágenes y video.</dd><dt>Lenguaje natural</dt><dd>que entienda y produzca texto o voz.</dd><dt>Sesgo</dt><dd>error sistemático que viene de datos incompletos o injustos.</dd></dl></aside>
+    </div>
+    <figure class="fig">
+          <svg viewBox="0 0 600 170" role="img" aria-label="Áreas principales de la IA">
+            <line class="ln" x1="300" y1="85" x2="105" y2="29"/><line class="ln" x1="300" y1="85" x2="495" y2="29"/><line class="ln" x1="300" y1="85" x2="105" y2="141"/><line class="ln" x1="300" y1="85" x2="495" y2="141"/>
+            <rect class="b" x="245" y="65" width="110" height="40" rx="20"/><text class="t" x="300" y="90">IA</text>
+            <rect class="b2" x="15" y="10" width="180" height="38" rx="6"/><text class="t" x="105" y="34">Aprendizaje automático</text>
+            <rect class="b2" x="405" y="10" width="180" height="38" rx="6"/><text class="t" x="495" y="34">Visión por computadora</text>
+            <rect class="b2" x="15" y="122" width="180" height="38" rx="6"/><text class="t" x="105" y="146">Lenguaje natural</text>
+            <rect class="b2" x="405" y="122" width="180" height="38" rx="6"/><text class="t" x="495" y="146">Robótica</text>
+          </svg>
+          <figcaption>Cuatro de las áreas más conocidas que salen de la IA.</figcaption>
+        </figure>
+    <div class="ej"><span class="tag">Ejemplo</span><p>Un sistema de visión revisa radiografías y marca zonas dudosas. El médico sigue decidiendo, pero llega más rápido a lo importante.</p></div>
+    <p class="think"><strong>Para pensar:</strong> ¿Qué tarea de tu día ya la hace una IA sin que lo notes? Yo conté cuatro en una mañana.</p>
+  </section>
+  <section id="s4" class="wk u2">
+    <header class="wk-head"><span class="num">4</span><div><p class="dates">18 - 24 ago</p><h2>Lógica proposicional</h2></div></header>
+    <div class="cols">
+      <div class="txt"><p>Al inicio pensé que la lógica era solo "sentido común", pero tiene reglas muy exactas. La unidad básica es la proposición: una oración de la que se puede decir con seguridad si es verdadera o falsa. Las preguntas y las órdenes se quedan fuera.</p><p>Con proposiciones simples se arman enunciados compuestos usando conectivos. Para no escribir oraciones largas, cada enunciado simple se reemplaza por una letra (p, q, r), y así lo que importa es la estructura y no el tema del que hablan.</p></div>
+      <aside class="gloss"><h3>En pocas palabras</h3><dl><dt>Proposición</dt><dd>oración que es verdadera o falsa, no ambas.</dd><dt>Enunciado simple</dt><dd>una sola afirmación, sin conectivos.</dd><dt>Enunciado compuesto</dt><dd>varias afirmaciones unidas con conectivos.</dd></dl></aside>
+    </div>
+    <figure class="fig">
+          <svg viewBox="0 0 600 130" role="img" aria-label="Un enunciado compuesto formado por dos simples">
+            <rect class="b2" x="10" y="10" width="210" height="42" rx="6"/><text class="t" x="115" y="36">p: Está lloviendo</text>
+            <rect class="b2" x="10" y="78" width="210" height="42" rx="6"/><text class="t" x="115" y="104">q: Hace frío</text>
+            <line class="l" x1="220" y1="31" x2="300" y2="58"/><line class="l" x1="220" y1="99" x2="300" y2="72"/>
+            <rect class="b" x="300" y="45" width="90" height="40" rx="6"/><text class="t" x="345" y="70">∧ (y)</text>
+            <line class="l" x1="390" y1="65" x2="440" y2="65"/>
+            <rect class="b" x="440" y="35" width="150" height="60" rx="6"/><text class="t" x="515" y="60">p ∧ q</text><text class="s" x="515" y="80">enunciado compuesto</text>
+          </svg>
+          <figcaption>Dos enunciados simples se unen con un conectivo y forman uno compuesto.</figcaption>
+        </figure>
+    <div class="ej"><span class="tag">Ejemplo</span><p>"Estudio y descanso" tiene dos partes unidas por "y", así que es p ∧ q. En cambio, "x + 2 = 5" todavía no es proposición, porque no sé cuánto vale x. Esa duda me llevó directo a la lógica de predicados.</p></div>
+    <p class="think"><strong>Para pensar:</strong> "Esta oración es falsa": ¿es verdadera o falsa? Me la mostraron como curiosidad y todavía me da vueltas.</p>
+  </section>
+  <section id="s5" class="wk u2">
+    <header class="wk-head"><span class="num">5</span><div><p class="dates">25 - 31 ago</p><h2>Conectivos lógicos y tablas de verdad</h2></div></header>
+    <div class="cols">
+      <div class="txt"><p>Cada conectivo tiene su propia forma de comportarse, y la tabla de verdad es la manera de comprobarlo sin adivinar. Se listan todas las combinaciones de verdadero y falso y se calcula el resultado fila por fila. Con dos proposiciones son cuatro filas, con tres serían ocho, y así el número se duplica cada vez.</p><p>Me ayudó relacionar cada conectivo con una frase de la vida diaria. "Llevo paraguas o me mojo" es una disyunción. "Apruebo si y solo si estudio" es un bicondicional, porque las dos cosas van juntas o ninguna.</p></div>
+      <aside class="gloss"><h3>En pocas palabras</h3><dl><dt>Tautología</dt><dd>fórmula que siempre resulta verdadera.</dd><dt>Contradicción</dt><dd>fórmula que siempre resulta falsa.</dd><dt>Equivalencia</dt><dd>dos fórmulas con la misma tabla de verdad.</dd></dl></aside>
+    </div>
+    <figure class="fig">
+          <div class="table-wrap">
+            <table>
+              <caption>Tabla de verdad de los cinco conectivos</caption>
+              <thead><tr><th>p</th><th>q</th><th>¬p</th><th>p ∧ q</th><th>p ∨ q</th><th>p → q</th><th>p ↔ q</th></tr></thead>
+              <tbody>
+                <tr><td>V</td><td>V</td><td>F</td><td>V</td><td>V</td><td>V</td><td>V</td></tr>
+                <tr><td>V</td><td>F</td><td>F</td><td>F</td><td>V</td><td class="no">F</td><td>F</td></tr>
+                <tr><td>F</td><td>V</td><td>V</td><td>F</td><td>V</td><td>V</td><td>F</td></tr>
+                <tr><td>F</td><td>F</td><td>V</td><td>F</td><td>F</td><td>V</td><td>V</td></tr>
+              </tbody>
+            </table>
+          </div>
+          <figcaption>En rojo, el único caso en que el condicional falla.</figcaption>
+        </figure>
+    <div class="ej"><span class="tag">Ejemplo</span><p>"Si llueve, entonces me mojo" (p → q). Si no llueve y me mojo igual, la frase no queda desmentida, por eso el resultado es verdadero. Solo la rompe que llueva y yo me quede seco.</p></div>
+    <p class="think"><strong>Para pensar:</strong> ¿Por qué el condicional es verdadero cuando la primera parte es falsa? Lo entendí pensando que nadie rompió la promesa.</p>
+  </section>
+  <section id="s6" class="wk u2">
+    <header class="wk-head"><span class="num">6</span><div><p class="dates">1 - 7 sep</p><h2>Lógica de predicados</h2></div></header>
+    <div class="cols">
+      <div class="txt"><p>La lógica proposicional no me deja decir "todos los gatos" o "algún estudiante". Los predicados lo arreglan: describen propiedades o relaciones de objetos, por ejemplo Gato(x) o Mayor(Juan, Ana). Las constantes son objetos concretos, las variables representan cualquier objeto y los cuantificadores indican cuántos cumplen la condición.</p><p>Un detalle que me costó captar: con ∀ se acostumbra usar el condicional, y con ∃ se usa la conjunción. Si con ∀ usara ∧, estaría diciendo que absolutamente todo es estudiante, y eso no es lo que quiero decir.</p></div>
+      <aside class="gloss"><h3>En pocas palabras</h3><dl><dt>Predicado</dt><dd>propiedad o relación entre objetos.</dd><dt>∀</dt><dd>para todo.</dd><dt>∃</dt><dd>existe al menos uno.</dd></dl></aside>
+    </div>
+    <figure class="fig">
+          <svg viewBox="0 0 600 125" role="img" aria-label="Piezas de la lógica de predicados">
+            <rect class="b" x="10" y="8" width="135" height="58" rx="6"/><text class="t" x="77" y="34">∀   ∃</text><text class="s" x="77" y="54">cuantificadores</text>
+            <rect class="b" x="160" y="8" width="135" height="58" rx="6"/><text class="t" x="227" y="34">x, y</text><text class="s" x="227" y="54">variables</text>
+            <rect class="b" x="310" y="8" width="135" height="58" rx="6"/><text class="t" x="377" y="34">Estudiante(x)</text><text class="s" x="377" y="54">predicado</text>
+            <rect class="b" x="460" y="8" width="130" height="58" rx="6"/><text class="t" x="525" y="34">Ana, 5</text><text class="s" x="525" y="54">constantes</text>
+            <text class="t" x="300" y="105">∀x ( Estudiante(x) → Estudia(x) )</text>
+          </svg>
+          <figcaption>Las piezas de arriba forman fórmulas como la de abajo.</figcaption>
+        </figure>
+    <div class="ej"><span class="tag">Ejemplo</span><p>"Algunos gatos son negros" se escribe ∃x (Gato(x) ∧ Negro(x)). "Todos los gatos son animales" se escribe ∀x (Gato(x) → Animal(x)).</p></div>
+    <p class="think"><strong>Para pensar:</strong> Intenta traducir una frase de tu día a predicados. Es más difícil que parece, y ahí se aprende.</p>
+  </section>
+  <section id="s7" class="wk u2">
+    <header class="wk-head"><span class="num">7</span><div><p class="dates">8 - 14 sep</p><h2>Fórmulas bien formadas, unificación e inferencia</h2></div></header>
+    <div class="cols">
+      <div class="txt"><p>Una fórmula bien formada (fbf) es la que respeta la gramática de la lógica, igual que una oración correcta respeta la del español. Los paréntesis y otros signos de puntuación quitan ambigüedades: sin ellos, p ∧ q ∨ r se podría leer de dos maneras.</p><p>La unificación busca una sustitución que haga idénticas dos expresiones. Con eso se hace inferencia, que es sacar conclusiones nuevas, y varias inferencias encadenadas forman un razonamiento. Si hay un choque entre constantes distintas, la unificación falla.</p></div>
+      <aside class="gloss"><h3>En pocas palabras</h3><dl><dt>fbf</dt><dd>fórmula escrita según las reglas de la lógica.</dd><dt>Sustitución</dt><dd>reemplazar variables por términos concretos.</dd><dt>Modus ponens</dt><dd>si p → q y p, entonces q.</dd></dl></aside>
+    </div>
+    <figure class="fig">
+          <svg viewBox="0 0 600 150" role="img" aria-label="Ejemplo de unificación">
+            <rect class="b2" x="10" y="10" width="200" height="38" rx="6"/><text class="t" x="110" y="34">Quiere(x, Ana)</text>
+            <rect class="b2" x="10" y="100" width="200" height="38" rx="6"/><text class="t" x="110" y="124">Quiere(Luis, y)</text>
+            <line class="l" x1="210" y1="29" x2="255" y2="60"/><line class="l" x1="210" y1="119" x2="255" y2="88"/>
+            <rect class="b" x="255" y="50" width="135" height="48" rx="6"/><text class="t" x="322" y="72">{x/Luis, y/Ana}</text><text class="s" x="322" y="90">sustitución</text>
+            <line class="l" x1="390" y1="74" x2="425" y2="74"/>
+            <rect class="b" x="425" y="50" width="165" height="48" rx="6"/><text class="t" x="507" y="72">Quiere(Luis, Ana)</text><text class="s" x="507" y="90">expresión unificada</text>
+          </svg>
+          <figcaption>Al reemplazar x por Luis y y por Ana, las dos expresiones quedan iguales.</figcaption>
+        </figure>
+    <div class="ej"><span class="tag">Ejemplo</span><p>P(x, b) y P(a, y) se unifican con {x/a, y/b}. En cambio P(a, x) y P(b, x) no, porque a y b son constantes distintas. Un razonamiento clásico: "todo humano es mortal" y "Sócrates es humano", luego "Sócrates es mortal".</p></div>
+    <p class="think"><strong>Para pensar:</strong> Si una computadora solo sabe unificar y aplicar reglas, ¿eso ya cuenta como razonar? Aún no tengo una respuesta.</p>
+  </section>
+  <section id="s8" class="wk u2">
+    <header class="wk-head"><span class="num">8</span><div><p class="dates">15 - 21 sep</p><h2>Reglas de producción</h2></div></header>
+    <div class="cols">
+      <div class="txt"><p>Las reglas de producción son la forma más directa de guardar conocimiento: SI pasa esto, ENTONCES haz aquello. Un sistema completo tiene una base de hechos, una base de reglas y un motor de inferencia que va eligiendo qué regla disparar.</p><p>Hay dos maneras de recorrerlas. Con el encadenamiento hacia adelante empiezo con lo que sé y avanzo hasta ver qué se concluye. Con el encadenamiento hacia atrás empiezo por la meta y voy preguntando qué necesito comprobar. Sistemas como MYCIN, de los años setenta, usaban reglas así para ayudar a diagnosticar infecciones.</p></div>
+      <aside class="gloss"><h3>En pocas palabras</h3><dl><dt>Base de hechos</dt><dd>lo que el sistema ya sabe.</dd><dt>Motor de inferencia</dt><dd>quien decide qué regla aplicar.</dd><dt>Encadenamiento</dt><dd>recorrer las reglas hacia adelante o hacia atrás.</dd></dl></aside>
+    </div>
+    <figure class="fig">
+          <svg viewBox="0 0 600 150" role="img" aria-label="Partes de un sistema de reglas de producción">
+            <rect class="b2" x="10" y="10" width="150" height="44" rx="6"/><text class="t" x="85" y="37">Base de hechos</text>
+            <rect class="b2" x="10" y="96" width="150" height="44" rx="6"/><text class="t" x="85" y="123">Base de reglas</text>
+            <line class="l" x1="160" y1="32" x2="225" y2="62"/><line class="l" x1="160" y1="118" x2="225" y2="88"/>
+            <rect class="b" x="225" y="50" width="150" height="50" rx="6"/><text class="t" x="300" y="80">Motor de inferencia</text>
+            <line class="l" x1="375" y1="75" x2="440" y2="75"/>
+            <rect class="b" x="440" y="50" width="150" height="50" rx="6"/><text class="t" x="515" y="72">Hechos nuevos</text><text class="s" x="515" y="90">conclusiones</text>
+          </svg>
+          <figcaption>El motor toma hechos y reglas para producir conclusiones.</figcaption>
+        </figure>
+    <div class="ej"><span class="tag">Ejemplo</span><p>R1: SI está nublado Y hay viento ENTONCES posible lluvia. R2: SI posible lluvia ENTONCES llevar paraguas. Con los hechos "nublado" y "viento", hacia adelante llego a "llevar paraguas". Hacia atrás, mi meta es "llevar paraguas" y compruebo que se cumplan nublado y viento.</p></div>
+    <p class="think"><strong>Para pensar:</strong> ¿Qué pasa si dos reglas se contradicen? Los sistemas reales necesitan un criterio para elegir.</p>
+  </section>
+
+  <section id="cierre" class="wk close">
+    <header class="wk-head"><span class="num">&#10003;</span><div><p class="dates">Al terminar</p><h2>Lo que me llevo de estas semanas</h2></div></header>
+    <p>Al inicio veía la IA y la lógica como dos materias separadas. Ahora las veo unidas: para que una máquina razone, primero alguien tiene que decirle el conocimiento en un lenguaje exacto, y ahí entran las proposiciones, los predicados y las reglas.</p>
+    <p>Lo que más me costó fue el condicional y los cuantificadores. Lo que más me gustó fue la unificación, porque es como resolver un rompecabezas de sustituciones. Me queda repasar las tablas de verdad con tres variables y practicar más el encadenamiento hacia atrás.</p>
+  </section>
+  </main>
+  <footer class="foot"><p>Hecho por Rene Arostegui para la clase de Inteligencia Artificial, UNHSJM, 2026.</p></footer>
+</div>
+</body>
+</html>
